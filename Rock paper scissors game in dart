@@ -1,0 +1,46 @@
+import 'dart:io';
+import 'dart:math';
+void main() {
+var a;
+
+while(a!="no")
+{
+
+Map <String, String> gamerules = {
+ "rock" : "sciessors",
+ "sciessors" : "paper",
+ "paper" : "rock"
+};
+
+var uservalue;
+var random = Random();
+print("Enter your choice: \n 1. rock \n 2. paper \n 3. sciessors");
+uservalue =stdin.readLineSync()!;
+print("You Enter $uservalue");
+var computerchoices = ["rock", "sciessors", "paper"];
+print("Computer choice:");
+var computerchoice =computerchoices[random.nextInt(computerchoices.length)];
+print(computerchoice);
+// main logic //
+if(gamerules[uservalue] == computerchoice)
+{
+print("user win");
+}
+else if(gamerules[computerchoice]== uservalue)
+{
+print("computer win");
+}
+else if(gamerules[uservalue]==gamerules[computerchoice])
+{
+print("match Tie");
+}
+else 
+{
+print("You enter invaild.........!");
+}
+print("Do you want to play it again just write yes or no");
+a=stdin.readLineSync()!;
+
+
+}
+}
